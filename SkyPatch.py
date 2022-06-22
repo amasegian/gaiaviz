@@ -1,7 +1,12 @@
+import numpy as np
 import pandas as pd
 from astropy import units as u
 import matplotlib.pyplot as plt
 from astroquery.gaia import Gaia
+from astropy.coordinates import SkyCoord
+
+from galpy.orbit import Orbit
+from galpy.potential import LogarithmicHaloPotential
 
 class SkyPatch():
 
@@ -33,3 +38,22 @@ class SkyPatch():
         cbar.set_label('distance (kpc)', fontsize=14)
         cbar.ax.yaxis.set_label_position('left')
         plt.show()
+
+    def animate_2D_star_positions(self):
+        '''
+        Note that HTML animations will be shown automatically in Jupyter notebooks, but not in regular iPython.
+        '''
+        skycoords = SkyCoord(ra=self.pandas_data['ra']*u.deg, 
+                    dec=self.pandas_data['dec']*u.deg, 
+                    distance=self.pandas_data['distance']*u.kpc,
+                    pm_ra_cosdec = self.pandas_data['pmra']*u.mas/u.yr,
+                    pm_dec=self.pandas_data['pmdec']*u.mas/u.yr,
+                    radial_velocity=self.pandas_data['radial_velocity']*u.km/u.s,
+                    frame='icrs')
+        lp = LogarithmicHaloPotential(normalize=1.)
+        o = Orbit(skycoords)
+        ts = np.linspace(0., 10, 100)
+        o.integrate(ts, lp)
+        o.plot3d(d1='ra', d2='dec', d3='vlos')
+        html_animation = o.animate(d1=['ra', 'x'],d2=['dec', 'y'])
+        return html_animation
