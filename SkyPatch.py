@@ -9,8 +9,17 @@ from galpy.orbit import Orbit
 from galpy.potential import LogarithmicHaloPotential
 
 class SkyPatch():
+    """
+    Class to store a patch of sky from Gaia and make different visualizations from it.
 
-    def __init__(self, ra, dec, radius=1, num_sources=None):
+    Args:
+        ra (float): The RA of the center of the patch of sky to visualize.
+        dec (float): The DEC of the center of the patch of sky to visualize.
+        radius (float): The radius of the circular patch of sky to visualize.
+        num_sources (None or int): If None, all sources found in the specified area will 
+            be pulled from Gaia. If an integer, that number of sources will be pulled.
+    """
+    def __init__(self, ra, dec, radius=1., num_sources=None):
         self.ra = ra
         self.dec = dec
         self.radius = radius
