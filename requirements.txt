@@ -1,0 +1,7 @@
+numpy
+pandas
+astropy
+astroquery
+plotly
+galpy
+matplotlib
