@@ -9,6 +9,7 @@ Welcome to GaiaViz's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   SkyPatch.rst
 
 
 
