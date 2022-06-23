@@ -30,6 +30,10 @@ class SkyPatch():
         self.pandas_data['distance'] = self.pandas_data['parallax']*u.marcsec.to(u.kpc, equivalencies=u.parallax())
 
     def plot_2D_star_positions(self):
+        """
+            Plots the current RA and dec positions of stars in the desired patch of sky
+            (RA and dec based on Gaia DR3)
+        """
         plt.figure(figsize=(14,12))
         plt.scatter(self.pandas_data['ra'], self.pandas_data['dec'], marker='*', s=10, c=self.pandas_data['distance'])
         plt.xlabel('ra', fontsize=14)
@@ -40,9 +44,19 @@ class SkyPatch():
         plt.show()
 
     def animate_2D_star_positions(self):
-        '''
-        Note that HTML animations will be shown automatically in Jupyter notebooks, but not in regular iPython.
-        '''
+        """
+            Animates the motion of stars forward in time using orbit integration (through galpy)
+            Note that HTML animations will be shown automatically in Jupyter notebooks, but not in regular iPython.
+            
+            Args:
+                pot (instance): Milky Way potential, chosen from among galpy potentials
+            
+            Returns: 
+                html animation: animation of star motion in sky coordinates (left) and galactic coordinates (right)
+                
+        
+        """
+        
         skycoords = SkyCoord(ra=self.pandas_data['ra']*u.deg, 
                     dec=self.pandas_data['dec']*u.deg, 
                     distance=self.pandas_data['distance']*u.kpc,
