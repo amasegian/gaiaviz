@@ -5,6 +5,8 @@ Tools for visualizing data from Gaia DR3.
 
 Created as part of Code/Astro 2022 to learn about Python package development!
 
+[![codeastro](https://img.shields.io/badge/Made%20at-Code/Astro-blueviolet.svg)](https://semaphorep.github.io/codeastro/)
+
 ## Installation
 To install gaiaviz, simply run the following command in the Python environment you wish the package to be installed in:
 
@@ -34,5 +36,3 @@ Animate the orbits of the sources in the SkyPatch in 2D:
 <pre><code>sp.animate_2D_star_positions()</pre></code>
 
 If you're curious about how these functions work or what other arguments you can specify, please read the docs included in our repo!
-
-[![codeastro](https://img.shields.io/badge/Made%20at-Code/Astro-blueviolet.svg)](https://semaphorep.github.io/codeastro/)
