@@ -5,5 +5,6 @@ setup(
     packages=find_packages(),
     description='Tools for visualizing data for Gaia DR3. Created as part of Code/Astro 2022 to learn about Python package development.',
     url='https://github.com/amasegian/gaiaviz',
-    keywords='Gaia'
+    keywords='Gaia',
+    install_requires=['numpy', 'pandas', 'plotly', 'astropy', 'astroquery', 'galpy']
 )
