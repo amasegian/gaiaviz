@@ -12,12 +12,12 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../gaiaviz/'))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'GaiaViz'
+project = 'gaiaviz'
 copyright = '2022, Alexandra Masegian, Hillary Andales'
 author = 'Alexandra Masegian, Hillary Andales'
 root_doc = 'index'

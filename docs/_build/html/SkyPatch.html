@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SkyPatch Class &mdash; GaiaViz 1.0.0 documentation</title>
+  <title>SkyPatch Class &mdash; gaiaviz 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,7 +17,8 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to GaiaViz’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -25,7 +26,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> GaiaViz
+            <a href="index.html" class="icon icon-home"> gaiaviz
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -35,18 +36,18 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">SkyPatch Class</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SkyPatch Class</a></li>
 </ul>
-</div>
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">GaiaViz</a>
+          <a href="index.html">gaiaviz</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -69,33 +70,27 @@
 <p>Class to represent and visualize a patch of sky in Gaia.</p>
 <span class="target" id="module-SkyPatch"></span><dl class="py class">
 <dt class="sig sig-object py" id="SkyPatch.SkyPatch">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SkyPatch.</span></span><span class="sig-name descname"><span class="pre">SkyPatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_sources</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SkyPatch.SkyPatch" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SkyPatch.</span></span><span class="sig-name descname"><span class="pre">SkyPatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_sources</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SkyPatch.SkyPatch" title="Permalink to this definition"></a></dt>
 <dd><p>Class to store a patch of sky from Gaia and make different visualizations from it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ra</strong> (<em>float</em>) – The RA of the center of the patch of sky to visualize.</p></li>
+<li><p><strong>ra</strong> (<em>float</em><em>) </em><em>(</em><em>default=5.</em>) – The RA of the center of the patch of sky to visualize.</p></li>
 <li><p><strong>dec</strong> (<em>float</em>) – The DEC of the center of the patch of sky to visualize.</p></li>
-<li><p><strong>radius</strong> (<em>float</em>) – The radius of the circular patch of sky to visualize.</p></li>
-<li><p><strong>num_sources</strong> (<em>None</em><em> or </em><em>int</em>) – If None, all sources found in the specified area will
+<li><p><strong>radius</strong> (<em>integer</em>) – The radius of the circular patch of sky to visualize. Must be in range [1,90].</p></li>
+<li><p><strong>num_sources</strong> (<em>None</em><em> or </em><em>int</em><em>) </em><em>(</em><em>default=None</em>) – If None, all sources found in the specified area will
 be pulled from Gaia. If an integer, that number of sources will be pulled.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="SkyPatch.SkyPatch.animate_2D_star_positions">
-<span class="sig-name descname"><span class="pre">animate_2D_star_positions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SkyPatch.SkyPatch.animate_2D_star_positions" title="Permalink to this definition"></a></dt>
-<dd><p>Animates the motion of stars forward in time using orbit integration (through galpy)
-Note that HTML animations will be shown automatically in Jupyter notebooks, but not in regular iPython.</p>
+<span class="sig-name descname"><span class="pre">animate_2D_star_positions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SkyPatch.SkyPatch.animate_2D_star_positions" title="Permalink to this definition"></a></dt>
+<dd><p>Animates the motion of stars forward in time using orbit integration (through galpy).
+Note that the animation produced will be an HTML file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>pot</strong> (<em>instance</em>) – Milky Way potential, chosen from among galpy potentials</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>animation of star motion in sky coordinates (left) and galactic coordinates (right)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>html animation</p>
+<dd class="field-odd"><p><strong>filename</strong> (<em>string</em><em>) </em><em>(</em><em>default=None</em>) – Path to save the final HTML animation to. If None, the animation will not be saved.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -103,8 +98,7 @@ Note that HTML animations will be shown automatically in Jupyter notebooks, but 
 <dl class="py method">
 <dt class="sig sig-object py" id="SkyPatch.SkyPatch.plot_2D_star_positions">
 <span class="sig-name descname"><span class="pre">plot_2D_star_positions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SkyPatch.SkyPatch.plot_2D_star_positions" title="Permalink to this definition"></a></dt>
-<dd><p>Plots the current RA and dec positions of stars in the desired patch of sky
-(RA and dec based on Gaia DR3)</p>
+<dd><p>Plots the current RA and DEC positions of stars in the desired patch of sky.</p>
 </dd></dl>
 
 </dd></dl>
@@ -114,7 +108,9 @@ Note that HTML animations will be shown automatically in Jupyter notebooks, but 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to GaiaViz’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
