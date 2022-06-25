@@ -1,3 +1,5 @@
+<p align="center"><img height=300 src="https://github.com/amasegian/gaiaviz/blob/main/logo.png?raw=true"></p>
+
 # gaiaviz
 Tools for visualizing data from Gaia DR3.
 
